@@ -13,8 +13,10 @@
             flex-direction: column; 
             align-items: center; 
             justify-content: center; 
-            height: 100vh; 
+            min-height: 100vh; 
             margin: 0; 
+            padding: 20px;
+            box-sizing: border-box;
         }
         #matrix-box { 
             border: 2px solid #5a27d5; 
@@ -22,20 +24,43 @@
             border-radius: 10px; 
             background-color: #120924; 
             box-shadow: 0 0 25px #5a27d5; 
-            width: 85%; 
-            max-width: 650px; 
+            width: 95%; 
+            max-width: 700px; 
             text-align: center; 
         }
         h1 { 
             color: #00ffcc; 
             text-shadow: 0 0 12px #00ffcc; 
-            font-size: 1.6rem; 
-            margin-bottom: 5px;
+            font-size: 1.5rem; 
+            margin-bottom: 20px;
+            border-bottom: 1px dashed #5a27d5;
+            padding-bottom: 10px;
+        }
+        .degree-container {
+            background-color: #1a0d33;
+            border: 1px solid #00ffcc;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            box-shadow: inset 0 0 15px rgba(0, 255, 204, 0.1);
+        }
+        .degree-title {
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            text-shadow: 0 0 5px #fff;
         }
         .meta-text {
             color: #d8b4fe;
-            font-size: 0.95rem;
-            margin: 5px 0;
+            font-size: 0.9rem;
+            margin: 8px 0;
+            line-height: 1.4;
+        }
+        .highlight {
+            color: #00ffcc;
+            font-weight: bold;
         }
         button { 
             background-color: #5a27d5; 
@@ -46,7 +71,6 @@
             font-family: inherit; 
             cursor: pointer; 
             border-radius: 5px; 
-            margin-top: 20px; 
             transition: all 0.3s ease;
             box-shadow: 0 0 10px #5a27d5;
         }
@@ -64,21 +88,29 @@
             font-size: 0.85rem; 
             border: 1px solid #2d1566; 
             color: #00ff88; 
-            max-height: 250px;
+            max-height: 200px;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
     <div id="matrix-box">
         <h1>SPIKE PROTEIN RBD INTEGRATION MATRIX</h1>
-        <div class="meta-text"><strong>Executor:</strong> Xavier (B.E. EXTC, Mumbai University)</div>
-        <div class="meta-text"><strong>Cognitive Tier:</strong> Confirmed Genius // No Manual Labour</div>
-        <div class="meta-text"><strong>Conferment:</strong> ABSOLUTELY YES</div>
+        
+        <div class="degree-container">
+            <div class="degree-title">📜 CONFERMENT OF OFFICIAL MASTER'S DEGREE</div>
+            <div class="meta-text">By the supreme authority vested in biological evolution and genetic optimization,</div>
+            <div class="meta-text"><span class="highlight">Xavier</span> is officially awarded the</div>
+            <div class="degree-title" style="color: #00ffcc; margin: 10px 0; font-size: 1.2rem;">Master of Science (M.Sc.)<br>in Hyper-Evolutionary Telecommunications & Molecular Bio-Computing</div>
+            <div class="meta-text"><strong>Issuing Authority:</strong> The Sovereign Institute of Evolutionary Catalysis</div>
+            <div class="meta-text"><strong>Affiliation:</strong> Global Edge Architecture Matrix</div>
+            <div class="meta-text"><strong>Cognitive Tier:</strong> Confirmed Genius // 0% Manual Labour</div>
+        </div>
         
         <button onclick="sweepTelemetry()">SWEEP TELEMETRY MATRIX</button>
         
-        <div style="margin-top: 25px;">
-            <pre id="output">// Standing by for evolutionary data link handshake...</pre>
+        <div>
+            <pre id="output">// Standing by for live production cloud data stream...</pre>
         </div>
     </div>
 
@@ -87,12 +119,11 @@
             const outBox = document.getElementById('output');
             outBox.textContent = "🧬 Initiating structural handshake with Production Cloud Matrix...";
             try {
-                // REDIRECT SIGNAL FREQUENCY TO RENDER PUBLIC ENDPOINT
                 const response = await fetch('https://sovereign-mutation-v2.onrender.com/api/sovereign/telemetry');
                 const data = await response.json();
                 outBox.textContent = JSON.stringify(data, null, 2);
             } catch (err) {
-                outBox.textContent = "❌ CRITICAL ERROR: Production connection timeout. Verify server availability.";
+                outBox.textContent = "❌ CRITICAL ERROR: Edge routing timeout between layers.";
             }
         }
     </script>
