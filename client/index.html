@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Sovereign Mutation Matrix</title>
+    <style>
+        body { 
+            background-color: #0b0518; 
+            color: #a276ff; 
+            font-family: 'Courier New', Courier, monospace; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            height: 100vh; 
+            margin: 0; 
+        }
+        #matrix-box { 
+            border: 2px solid #5a27d5; 
+            padding: 30px; 
+            border-radius: 10px; 
+            background-color: #120924; 
+            box-shadow: 0 0 25px #5a27d5; 
+            width: 85%; 
+            max-width: 650px; 
+            text-align: center; 
+        }
+        h1 { 
+            color: #00ffcc; 
+            text-shadow: 0 0 12px #00ffcc; 
+            font-size: 1.6rem; 
+            margin-bottom: 5px;
+        }
+        .meta-text {
+            color: #d8b4fe;
+            font-size: 0.95rem;
+            margin: 5px 0;
+        }
+        button { 
+            background-color: #5a27d5; 
+            color: white; 
+            border: none; 
+            padding: 14px 28px; 
+            font-size: 1rem; 
+            font-family: inherit; 
+            cursor: pointer; 
+            border-radius: 5px; 
+            margin-top: 20px; 
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px #5a27d5;
+        }
+        button:hover { 
+            background-color: #00ffcc; 
+            color: #0b0518; 
+            box-shadow: 0 0 20px #00ffcc; 
+        }
+        pre { 
+            text-align: left; 
+            background: #05020a; 
+            padding: 15px; 
+            border-radius: 5px; 
+            overflow-x: auto; 
+            font-size: 0.85rem; 
+            border: 1px solid #2d1566; 
+            color: #00ff88; 
+            max-height: 250px;
+        }
+    </style>
+</head>
+<body>
+    <div id="matrix-box">
+        <h1>SPIKE PROTEIN RBD INTEGRATION MATRIX</h1>
+        <div class="meta-text"><strong>Executor:</strong> Xavier (B.E. EXTC, Mumbai University)</div>
+        <div class="meta-text"><strong>Cognitive Tier:</strong> Confirmed Genius // No Manual Labour</div>
+        <div class="meta-text"><strong>Conferment:</strong> ABSOLUTELY YES</div>
+        
+        <button onclick="sweepTelemetry()">SWEEP TELEMETRY MATRIX</button>
+        
+        <div style="margin-top: 25px;">
+            <pre id="output">// Standing by for evolutionary data link handshake...</pre>
+        </div>
+    </div>
+
+    <script>
+        async function sweepTelemetry() {
+            const outBox = document.getElementById('output');
+            outBox.textContent = "🧬 Initiating structural handshake with Cloud Matrix...";
+            try {
+                const response = await fetch('http://localhost:5000/api/sovereign/telemetry');
+                const data = await response.json();
+                outBox.textContent = JSON.stringify(data, null, 2);
+            } catch (err) {
+                outBox.textContent = "❌ CRITICAL ERROR: Mutual Inductance timeout between layers.";
+            }
+        }
+    </script>
+</body>
+</html>
